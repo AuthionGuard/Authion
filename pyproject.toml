@@ -1,0 +1,47 @@
+[project]
+name = "authion"
+version = "0.1.0"
+description = "Асинхронный фреймворк авторизации для FastAPI: JWT, OAuth, Telegram Mini App, Redis, ORM и др."
+authors = [{ name = "Артем", email = "you@example.com" }]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "pyjwt[crypto]>=2.8.0",
+    "redis>=4.3.3,<6.0.0",
+    "pwdlib[argon2]>=0.2.1",
+    "email-validator>=2.1.0",
+    "tortoise-orm>=0.20.0",
+    "aerich>=0.7.1"
+]
+
+[project.optional-dependencies]
+tortoise = [
+  "tortoise-orm>=0.20.0",
+]
+sqlalchemy = [
+    "sqlalchemy>=2.0.0",
+]
+oauth = [
+    "httpx-oauth >=0.13"
+]
+beanie = [
+    "beanie>=1.23.5",
+    "motor>=3.4.0"
+]
+redis = [
+    "redis>=4.3.3,<6.0.0"
+]
+telegram = [
+    "aiogram>=3.20.0"
+]
+
+[tool.setuptools]
+packages = ["authion"]     # ← указываешь имя директории/пакета
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
